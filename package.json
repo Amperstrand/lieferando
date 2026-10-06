@@ -1,0 +1,27 @@
+{
+  "name": "lieferando",
+  "version": "0.1.0",
+  "description": "Read-only Lieferando (Just Eat Takeaway) storefront client. Venue + menu reads from the open globalmenucdn JSON — never touches the WAF'd app shell. No orders, no payment.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "lieferando": "./dist/cli.js"
+  },
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",
+    "gate": "node scripts/leak-scan.mjs . --history",
+    "prepare": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "~6.0.3",
+    "vitest": "^3.0.0"
+  }
+}
