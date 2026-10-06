@@ -47,3 +47,10 @@ the wire contract, and stay leak-gate clean.
   first encoded, the fake ALSO put that group in the manifest, so the
   drop-path never ran and the test failed on a count. One quirk per
   fixture venue, or the fixtures cancel each other.
+- Cross-fleet (see platform-recon research/LESSONS.md): the scaffold
+  generator (platform-recon scripts/new-client.ts) now emits this
+  package's conventions — regenerate rather than copy for the next
+  provider; keep this file's per-quirk Lessons as the canonical detail.
+- Parity lane: this package's items feed scripts/parity.ts via
+  {title, price} adapters; a venue joined across GastroNova+Wolt
+  showed systematic own-brand deltas — expect the same per venue.
